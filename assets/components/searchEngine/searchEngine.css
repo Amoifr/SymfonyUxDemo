@@ -1,0 +1,18 @@
+.search-container {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    border-radius: 40px;
+    background-color: transparent;
+    padding: 10px 15px;
+    width: 80%;
+    border: 1px solid #303030;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-frame {
+    margin-top: 100px;
+}

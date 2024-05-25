@@ -1,0 +1,40 @@
+<div {{ attributes }}>
+
+    <div class="form-container">
+        <form class="edit-form" method="POST">
+            <div class="input-group">
+                {% if this.error is not null %}
+                    <div class="invalid-feedback" style="font-size: 1.5rem">{{ this.error }}</div>
+                    <img src="{{ asset('img/nonono.gif') }}">
+                {% endif %}
+                <div class="form-group">
+                    <label for="password">{{ this.label }}</label>
+                    <input
+                            type="text"
+                            data-model="debounce(1000)|password"
+                            class="form-control"
+                            autofocus
+                            id="password"
+                            style="width:92%"
+                    />
+                </div>
+                <div class="btns-container">
+                    {% if this.displayLink == false %}
+                        <button
+                                data-action="live#action:prevent"
+                                data-live-action-param="passwordChange"
+                                class="btn btn-primary"
+                        >Submit</button>
+                    {% else %}
+                        <a href="/">
+                            <button
+                                    class="btn btn-danger"
+                            >Follow the white rabbit !</button>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

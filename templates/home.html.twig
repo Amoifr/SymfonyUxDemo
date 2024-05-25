@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {{ component('header') }}
+    <div class="container">
+        <div class="sidebar">
+            {{ component('play_zone') }}
+        </div>
+        <div class="search_engine_content">
+            {{ component('search_engine') }}
+        </div>
+    </div>
+    {{ component('edit_modal') }}
+{% endblock %}

@@ -1,0 +1,33 @@
+<article class="card">
+    <img class="card-image" src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ this.video.snippet.title }}" />
+    <div class="card-header">
+        {{ this.video.snippet.title | slice(0,50) }}...
+    </div>
+    <div class="card-footer">
+        <div class="card-meta card-meta--views">
+            <twig:UX:Icon name="material-symbols:movie" style="width:20px; display: inline; opacity: .9; fill: none"/>
+            {{ this.video.snippet.channelTitle }}
+        </div>
+        <div class="card-meta card-meta--date">
+            <twig:UX:Icon name="bi:calendar-date" style="width:20px; display: inline; opacity: .9; fill: none"/>
+            {{ this.video.snippet.publishedAt | date('Y-m-d') }}
+        </div>
+    </div>
+    <div class="add-to-playlist">
+        <div class="card-meta card-meta--add pointer"
+             id="add-to-playlist_{{ this.video.id.videoId }}"
+             data-video="{{ this.video.id.videoId }}"
+             data-channel="{{ this.video.snippet.channelTitle }}"
+             data-name="{{ this.video.snippet.title }}"
+             data-description="{{ this.video.snippet.description }}"
+             data-picture="{{ video.snippet.thumbnails.medium.url }}"
+        >
+            <twig:UX:Icon name="mdi:heart-outline" style="width:20px; display: inline; opacity: .9; fill: none; vertical-align: text-bottom;" data-action="live"/>
+            Add to playlist
+        </div>
+        <div class="card-meta card-meta--added" id="added-to-playlist_{{ this.video.id.videoId }}" style="display:none;">
+            <twig:UX:Icon name="mdi:heart" style="color:red; width:20px; display: inline; opacity: .9; fill: none; vertical-align: text-bottom;"/>
+            Added to playlist
+        </div>
+    </div>
+</article>

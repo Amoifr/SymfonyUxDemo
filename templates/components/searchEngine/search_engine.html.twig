@@ -1,0 +1,16 @@
+<div {{ attributes }}>
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input class="search-bar" name="q" placeholder="Search..." type="search" data-model="query">
+        </form>
+    </div>
+    <div class="card-list">
+        {% for video in this.videos %}
+            {% if video.id.kind == 'youtube#video' %}
+            <div>
+                {{ component('video_card', {'video':video}) }}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="playlist-container" {{ attributes }}>
+    <main class="playlist-container-profiles">
+        {% for playlistItem in this.playlistItems %}
+            {{ component('playlist_item', {playlistItem: playlistItem} ) }}
+        {% endfor %}
+    </main>
+    <button
+            id="updatePlaylistBtn"
+            type="button"
+            data-action="live#action"
+            data-live-action-param="updateTrigger"
+            style="display:none;"
+    >Update</button>
+    <input
+            id="categoryPlaylistInput"
+            data-model="category"
+            style="display:none;"
+    />
+</div>

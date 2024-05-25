@@ -1,0 +1,9 @@
+<article class="playlist-container-profile" data-videoid="{{ this.playlistItem.videoId }}" data-start="{{ this.playlistItem.start }}" data-stop="{{ this.playlistItem.stop }}">
+    <img src="{{ this.playlistItem.picture }}" alt="{{ this.playlistItem.name }}" class="playlist-container-picture">
+    <span class="playlist-container-name">{{ this.playlistItem.alternativeName | default(this.playlistItem.name) }}</span>
+    <span style="display:flex; flex-direction: row">
+        {{ ux_icon('bi:play-fill', {class: 'playlist-item-button play-button', height: '26px', width: '26px'}) }}
+        {% set openModalButtonId = "openModalBtn_" ~ this.playlistItem.videoId %}
+        {{ ux_icon('bi:pencil-square', {class: 'playlist-item-button', id: openModalButtonId, height: '20px', width: '20px'}) }}
+    </span>
+</article>

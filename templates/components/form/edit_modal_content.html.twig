@@ -1,0 +1,82 @@
+<div {{ attributes }}>
+    <div class="form-container">
+        {% if isEditing %}
+            <form class="edit-form">
+                <div class="input-group">
+                    {% set error = this.getError('food.name') %}
+
+                    <div class="form-group">
+                        <label for="playlistItem_alternativeName">Alternative Name:</label>
+                        <input
+                                type="text"
+                                data-model="playlistItem.alternativeName"
+                                class="form-control{{ error ? ' is-invalid' }}"
+                                autofocus
+                                id="playlistItem_alternativeName"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="playlistItem_start">Start:</label>
+                        <input
+                                type="number"
+                                data-model="playlistItem.start"
+                                class="form-control{{ error ? ' is-invalid' }}"
+                                autofocus
+                                id="playlistItem_start"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="playlistItem_stop">Stop:</label>
+                        <input
+                                type="number"
+                                data-model="playlistItem.stop"
+                                class="form-control{{ error ? ' is-invalid' }}"
+                                autofocus
+                                id="playlistItem_stop"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="playlistItem_category">Category:</label>
+                        <select
+                                data-model="playlistItem.category"
+                                class="form-control{{ error ? ' is-invalid' }}"
+                                autofocus
+                                id="playlistItem_category"
+                        >
+                        <option value="">None</option>
+                        <option value="work">Work</option>
+                        <option value="joke">Joke</option>
+                        </select>
+                    </div>
+                    <div class="btns-container">
+                        <button
+                                id="removePlayListItemBtn"
+                                data-action="live#action:prevent"
+                                data-live-action-param="remove"
+                                class="btn btn-danger"
+                        >Remove</button>
+                        <button
+                                id="editPlayListItemBtn"
+                                data-action="live#action:prevent"
+                                data-live-action-param="save"
+                                class="btn btn-primary{{ error ? ' btn-danger' : '' }}"
+                        >Save</button>
+                    </div>
+                    {% if error %}
+                        <div class="invalid-feedback">{{ error.message }}</div>
+                    {% endif %}
+                </div>
+            </form>
+        {% else %}
+            <div class="item-info">
+                {% if this.playlistItem is not null %}
+                    <h2>{{ this.playlistItem.name }}</h2>
+                {% else %}
+                    <h2>Item removed</h2>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>

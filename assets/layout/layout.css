@@ -1,0 +1,31 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #717171 rgba(0,0,0,0);
+    color: #F1F1F1;
+}
+
+body {
+    margin: 0;
+    background-color: #0F0F0F;
+    font-family: "Lexend", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    border-right: solid #3F3F3F 1px;
+    height: 100%;
+    overflow: hidden
+}
+
+.search_engine_content{
+    margin: 70px 15px 0px 500px;
+}

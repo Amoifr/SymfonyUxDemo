@@ -1,0 +1,9 @@
+.player-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.player {
+    display: flex;
+    padding: 90px 20px 20px 20px;
+}

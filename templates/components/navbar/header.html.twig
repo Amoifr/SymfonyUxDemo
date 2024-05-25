@@ -1,0 +1,11 @@
+<header class="sticky-header">
+    <div class="logo"> <twig:UX:Icon name="icomoon-free:evil" style="width:20px; display: inline; opacity: .9; fill: none"/></div>
+    <div class="site-name">DEMONstration</div>
+    <nav class="links">
+        <ul>
+            {{ component('nav_link', {label: 'All', value:'all'}) }}
+            {{ component('nav_link', {label: 'Work', value:'work'}) }}
+            {{ component('nav_link', {label: 'Joke', value:'joke'}) }}
+        </ul>
+    </nav>
+</header>

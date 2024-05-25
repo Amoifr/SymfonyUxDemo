@@ -1,0 +1,44 @@
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: solid #3F3F3F 1px;
+    background-color: #0F0F0F;
+    z-index: 1000;
+}
+
+.sticky-header .logo,
+.sticky-header .site-name,
+.sticky-header .links {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.sticky-header .logo {
+
+}
+
+.sticky-header .site-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sticky-header .links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sticky-header .links ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sticky-header .links ul li a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.sticky-header .links ul li a:hover {
+    color: #F1F1F1;
+}

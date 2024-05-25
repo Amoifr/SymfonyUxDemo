@@ -1,0 +1,81 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #222222;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    transition: 0.15s ease-in;
+    width: 300px;
+    height: 400px;
+}
+
+.card:hover, .card:focus-within {
+    transform: translatey(-5px);
+}
+
+.card-image {
+    overflow: hidden;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-header {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-header a {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+    will-change: transform;
+}
+
+.card-header a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card-footer {
+    margin: 1rem;
+    border-top: 1px solid #3F3F3F;
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-meta {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.add-to-playlist {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #3F3F3F;
+}
+
+.pointer {
+    cursor: copy;
+}
